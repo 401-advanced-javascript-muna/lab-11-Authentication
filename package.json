@@ -1,0 +1,30 @@
+{
+  "name": "lab-11-Authentication",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advanced-javascript-muna/lab-11-Authentication.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/401-advanced-javascript-muna/lab-11-Authentication/issues"
+  },
+  "homepage": "https://github.com/401-advanced-javascript-muna/lab-11-Authentication#readme",
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "bcryptjs": "^2.4.3",
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.8.11"
+  }
+}
