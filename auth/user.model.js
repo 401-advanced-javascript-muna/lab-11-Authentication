@@ -1,6 +1,6 @@
 
 
-const schema = require('./user');
+// const schema = require('./user');
 
 class User {
   constructor(){}
