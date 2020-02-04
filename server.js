@@ -32,7 +32,7 @@ app.post('/signin', basicAuth, (req, res) => {
 
 app.get('/users', basicAuth, (req, res) => {
   console.log('kkkkkkkk',(users.find()));
-  res.status(200).json(users.find());
+  res.status(200).json();
 });
 
 module.exports = {
