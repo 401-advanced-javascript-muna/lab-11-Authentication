@@ -1,10 +1,10 @@
-'use strict';
 
-const schema = require('./user');
+
+// const schema = require('./user');
 
 class User {
-  constructor() {};
-  
+  constructor(){}
+
   get(_id) {
     if (_id) {
       return schema.findOne({ _id });

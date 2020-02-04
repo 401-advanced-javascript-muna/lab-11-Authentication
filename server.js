@@ -1,19 +1,29 @@
 'use strict';
 
+
 const express = require('express');
-const basicAuth = require('./auth/basic-auth-middleware.js');
+
+const basicAuth =  require('./auth/basic-auth-middleware.js');
+
 const users = require('./auth/user.js');
+
 
 const app = express();
 
 app.use(express.json());
 
+//**************Routes*******************
+
 app.post('/signup', (req, res) => {
-  users.create(req.body)
-    .then(user => {
-      let token = users.generateToken(user);
+  new users(req.body).save()
+  //   console.log(req.body,'req.bodyreq.bodyreq.bodyreq')
+  //  console.log('req.body 2' , req.body)
+    .then((user) => {
+
+      console.log('user-------',user);
+      let token = user.generateToken();
       res.status(200).send(token);
-    })
+    }).catch(err => console.error(err));
 });
 
 app.post('/signin', basicAuth, (req, res) => {
@@ -21,15 +31,15 @@ app.post('/signin', basicAuth, (req, res) => {
 });
 
 app.get('/users', basicAuth, (req, res) => {
-//   res.status(200).json(get(_id));
-  res.status(200).json(get(_id));
-
+  console.log('kkkkkkkk',(users.find()));
+  res.status(200).json(users.find());
 });
 
 module.exports = {
-    server: app,
-    start: port => {
-      let PORT = port || process.env.PORT || 3000;
-      app.listen(PORT, () => console.log('server up:', PORT));
-    }
-  }
+  server: app,
+  start: port => {
+    let PORT = port || process.env.PORT || 3000;
+    app.listen(PORT, () => console.log('MY SERVER IS UP  :', PORT));
+  },
+};
+
