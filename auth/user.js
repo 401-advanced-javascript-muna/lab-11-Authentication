@@ -16,7 +16,7 @@ const users = new mongoose.Schema({
 //   Hash the plain text password given before you save a user to the database
 users.pre('save', async function() {
     this.password = await bcrypt.hash(this.password, 5);
-    // console.log('ffffffffffff',this.password)
+    console.log('ffffffffffff',this.password)
   });
 
 
