@@ -1,5 +1,6 @@
-'use strict';
+/* eslint-disable no-unused-vars */
 
+'use strict ';
 const base64 = require('base-64');
 
 const users = require('./user');
@@ -11,7 +12,7 @@ let SECRET = 'secret123';
 function generateToken(user) {
   let token = jwt.sign({ id: user._id  }, SECRET);
   // let token = jwt.sign({ username: user.username}, SECRET);
-  //
+
   return token;
 }
 

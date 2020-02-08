@@ -1,3 +1,6 @@
+/* eslint-disable no-empty-function */
+/* eslint-disable new-cap */
+/* eslint-disable no-undef */
 
 
 // const schema = require('./user');
